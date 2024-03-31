@@ -77,7 +77,8 @@ namespace flir_lepton_image_processing
     params.filterByColor = Parameters::Blob::filter_by_color;
     params.filterByCircularity = Parameters::Blob::filter_by_circularity;
 
-    cv::SimpleBlobDetector blobDetector(params);
+    //cv::SimpleBlobDetector blobDetector(params);
+    cv::Ptr<cv::SimpleBlobDetector> blobDetector = cv::SimpleBlobDetector::create(params);
     blobDetector.create("SimpleBlob");
 
     std::vector<cv::KeyPoint> keyPoints;
