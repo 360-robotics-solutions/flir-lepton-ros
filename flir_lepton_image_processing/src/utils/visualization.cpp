@@ -105,7 +105,7 @@ namespace flir_lepton_image_processing
 
       cv::putText(big, titles[im].c_str(),
         cvPoint(startCol + 10, startRow + 20),
-        cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0, 255, 0), 1, CV_AA);
+        cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0, 255, 0), 1, cv::LINE_AA);
     }
 
     for (unsigned int i = 1 ; i <= rows - 1 ; i++)
@@ -268,7 +268,7 @@ namespace flir_lepton_image_processing
         cv::putText(img, msgs[i].c_str(),
           cvPoint(conveyor.rois[i].keypoint.pt.x - 20,
             conveyor.rois[i].keypoint.pt.y - 20),
-          cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(255, 50, 50), 1, CV_AA);
+          cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(255, 50, 50), 1, cv::LINE_AA);
       }
     }
 
@@ -277,7 +277,7 @@ namespace flir_lepton_image_processing
       cv::putText(img,
         (TOSTR(hz)+std::string("Hz")).c_str(),
         cvPoint(20, 20),
-        cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0, 0, 255), 1, CV_AA);
+        cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0, 0, 255), 1, cv::LINE_AA);
     }
 
     if (ms >= 0)
